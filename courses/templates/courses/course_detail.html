@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-3" style="border: 1px solid #d3d3d3;">
+            <h1 class="text-center pt-2">{{object.title}}</h1>
+            <hr>
+            <p>{% if object.content %}{{object.content}}{% else %} Content Coming Soon {% endif %}</p>
+
+            <div class="d-flex justify-content-between">
+                <a href="{{ object.get_absolute_url }}update" class="btn btn-outline-secondary mb-2">Update</a>
+                <a href="{{ object.get_absolute_url }}delete" class="btn btn-outline-danger mb-2">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
